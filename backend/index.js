@@ -95,7 +95,7 @@ app.post('/addproduct', async (req, res) => {
 
 app.post('/deletproduct', async (req, res) => {
     await Product.findOneAndDelete({ id: req.body.id });
-    res,json({
+    res.json({
         succes: 1,
         name: req.body.name,
     });
@@ -115,24 +115,26 @@ app.get('/api/products/count', async (req, res) => {
     }
 });
 
-app.get('/api/admin/product/count-by-category', async (req, res) => {
-    try {
-        const productsByCategory = await Product.aggregate([
-            {
-                $group: {
-                    _id: '$category',
-                    count: { $sum: 1 },
-                },
-            },
-        ]);
-        const categoryCount = {};
+app.get("/api/admin/products/count-by-category", async (req, res) => {
+  try {
+    const productsByCategory = await Product.aggregate([
+      {
+        $group: {
+          _id: "$category",
+          count: { $sum: 1 },
+        },
+      },
+    ]);
+    const categoryCount = {};
     productsByCategory.forEach((product) => {
+      // converts the productsByCategory into a more readable object
       categoryCount[product._id] = product.count;
     });
     res.json(categoryCount);
-    } catch (error) {
-        res.status(500).json({ error: "Server Error" });
-      }
+  } catch (error) {
+    console.error("Error fetching product count by category:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 });
 
 
