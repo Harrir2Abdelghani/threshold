@@ -32,23 +32,6 @@ const Dashboard = () => {
         };
         fetchCategoryData();
     }, []);
-    useEffect(() => {
-        const fetchTotalProducts = async () => {
-            try {
-                const response = await fetch('http://192.168.1.38:4000/api/products/count');
-                const data = await response.json();
-                setTotalProducts(data.total); 
-            } catch (error) {
-                console.error("Error fetching total products:", error);
-            }
-        };
-        const fetchProductsOverTime = async () => {        
-            const dummyData = [10, 20, 15, 25, 30, 35, 40]; 
-            setProductsOverTime(dummyData);
-        };
-        fetchTotalProducts(); 
-        fetchProductsOverTime(); 
-    }, []);
     const pieData = {
         labels: ['Total Products'],
         datasets: [
