@@ -137,7 +137,6 @@ app.get("/api/admin/products/count-by-category", async (req, res) => {
   }
 });
 
-
 const Users = mongoose.model("Users", {
     name: {
       type: String,
