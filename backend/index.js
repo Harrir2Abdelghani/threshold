@@ -73,7 +73,7 @@ app.post('/addproduct', async (req, res) => {
     let products = await Product.find({});
     let id;
     if (products.length > 0) {
-        let last_produc_array = products.slice(-1);
+        let last_product_array = products.slice(-1);
         let last_product = last_product_array[0];
         id = last_product.id + 1;
     } else {
@@ -127,7 +127,6 @@ app.get("/api/admin/products/count-by-category", async (req, res) => {
     ]);
     const categoryCount = {};
     productsByCategory.forEach((product) => {
-      // converts the productsByCategory into a more readable object
       categoryCount[product._id] = product.count;
     });
     res.json(categoryCount);

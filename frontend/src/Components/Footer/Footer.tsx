@@ -76,6 +76,20 @@ const Footer: React.FC = () => {
             </li>
           </ul>
         </div>
+        <div className='sm:text-center sm:mx-auto text-center'>
+          <h4 className="font-bold mb-4 text-white text-center">Categories</h4>
+          <ul>
+            <li className="mb-2 text-deepPlum hover:text-roseGold transition">
+              <a href="/#">Men Gear</a>
+            </li>
+            <li className="mb-2 text-deepPlum hover:text-roseGold transition">
+              <a href="#">Women Gear</a>
+            </li>
+            <li className="mb-2 text-deepPlum hover:text-roseGold transition">
+              <a href="/">More</a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="mt-14 text-center text-gray-500">
         © 2024 <span className='text-white'>Threshold</span>  | Made With ❤️ In Dz.
