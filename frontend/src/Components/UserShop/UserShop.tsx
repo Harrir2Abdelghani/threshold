@@ -154,8 +154,8 @@ const UserShop: React.FC = () => {
       <div className="w-3/4 p-4">
         <div className="flex justify-between items-center mb-4 -ml-24">
           <div>
-            <h1 className="text-2xl font-bold text-deepPlum">Discover</h1>
-            <p className="text-sm text-gray-500">Explore Our New Collections</p>
+            <h1 className="text-2xl md:-ml-60 font-bold text-deepPlum">Discover</h1>
+            <p className="text-sm md:-ml-60 text-gray-500">Explore Our New Collections</p>
           </div>
           <div className="relative">
             <FaShoppingCart

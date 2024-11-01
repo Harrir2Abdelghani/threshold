@@ -20,13 +20,13 @@ const Hero: React.FC = () => {
             className="w-full h-full object-cover mx-10 animate-bounce"
           />
         </div>
-        <div className="w-full md:w-1/2 mt-14 text-center md:text-left space-y-4">
+        <div className="w-full md:w-1/2 -mt-4 text-center md:text-left space-y-4">
           <h1
-            className={`text-lg md:text-2xl font-extrabold  text-deepPlum ${
+            className={`text-2xl md:text-4xl font-extrabold  text-deepPlum ${
               animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             } transition-all duration-700`}
           >
-            ✨Discover Performance, Shop Sportswear✨
+            ✨Discover Performance✨
           </h1>
           <p
             className={`text-md font-bold md:text-xl font-mono text-gray-700 ${
