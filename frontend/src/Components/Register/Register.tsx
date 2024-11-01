@@ -36,7 +36,7 @@ const Register: React.FC = () => {
     }
 
     let responseData: ResponseData | undefined;
-    await fetch('http://192.168.1.38:4000/signup', {
+    await fetch('https://threshold-server.onrender.com/signup', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
