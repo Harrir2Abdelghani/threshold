@@ -24,7 +24,7 @@ const Login: React.FC = () => {
   const signin = async () => {
     let responseData: ResponseData | undefined; 
 
-    await fetch('http://192.168.1.38:4000/signin', {
+    await fetch('https://threshold-server.onrender.com/signin', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
