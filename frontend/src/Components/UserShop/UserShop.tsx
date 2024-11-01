@@ -49,7 +49,7 @@ const UserShop: React.FC = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://192.168.1.38:4000/allproducts');
+        const response = await fetch('https://threshold-server.onrender.com/allproducts');
         if (!response.ok) throw new Error('Network response Error');
         const data: Product[] = await response.json();
         setProducts(data);
