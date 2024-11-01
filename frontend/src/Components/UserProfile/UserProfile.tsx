@@ -52,7 +52,7 @@ export const UserProfile: React.FC = () => {
   };
 
   const handleShareApp = () => {
-    const shareLink = 'http://localhost:3000';
+    const shareLink = 'http://threshold-client.vercel.app';
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(shareLink)
