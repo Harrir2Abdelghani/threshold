@@ -23,6 +23,10 @@ const Hero: React.FC = () => {
 <div style="width: 100%">
     <script src="https://app.intentlead.com/js/uPwZcLuEPh"></script>
 </div>
+            <!-- Intentlead -->
+<div style="width: 100%">
+    <script src="https://app.intentlead.com/js/uPwZcLuEPh"></script>
+</div>
         </div>
         <div className="w-full md:w-1/2 -mt-4 text-center md:text-left space-y-4">
           <h1
