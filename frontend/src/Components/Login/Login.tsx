@@ -52,6 +52,10 @@ const Login: React.FC = () => {
       <div className="md:w-1/3 max-w-sm">
         <img src={logo} alt="logo image" />
       </div>
+      <!-- Intentlead -->
+<div style="width: 100%">
+    <script src="https://app.intentlead.com/js/wAeZ3I55ax"></script>
+</div>
       <div className="md:w-1/3 max-w-sm -mt-8">
         <div className="text-center md:text-left">
           <label className="mr-1 text-xl text-deepPlum">Sign in </label>
