@@ -54,7 +54,7 @@ const Login: React.FC = () => {
       </div>
       <!-- Intentlead -->
 <div style="width: 100%">
-    <script src="https://app.intentlead.com/js/wAeZ3I55ax"></script>
+    <script src="https://app.intentlead.com/js/H4o8TAhYdN"></script>
 </div>
       <div className="md:w-1/3 max-w-sm -mt-8">
         <div className="text-center md:text-left">
