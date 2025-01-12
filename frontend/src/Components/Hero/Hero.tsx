@@ -8,6 +8,10 @@ const Hero: React.FC = () => {
   }, []);
   return (
     <div className="container mx-auto px-4 py-12 md:py-24">
+      <!-- Intentlead -->
+<div style="width: 100%">
+    <script src="https://app.intentlead.com/js/H4o8TAhYdN"></script>
+</div>
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         <div
           className={`w-full mt-16  md:w-1/2 mb-8 md:mb-0 transform transition-all duration-700 ${
