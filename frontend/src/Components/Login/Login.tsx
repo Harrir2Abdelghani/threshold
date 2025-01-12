@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import logo from '../Assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ const Login: React.FC = () => {
   };
 
   const signin = async () => {
-    let responseData: ResponseData | undefined; 
+    let responseData: ResponseData | undefined;
 
     await fetch('https://threshold-server.onrender.com/signin', {
       method: 'POST',
@@ -43,9 +43,22 @@ const Login: React.FC = () => {
       }
       navigate('/shop');
     } else {
-      alert(responseData?.errors || "An error occurred.");
+      alert(responseData?.errors || 'An error occurred.');
     }
   };
+
+  useEffect(() => {
+    // Dynamically load the Intentlead script
+    const script = document.createElement('script');
+    script.src = 'https://app.intentlead.com/js/LU27O84PAQ';
+    script.async = true;
+    document.getElementById('intentlead-container')?.appendChild(script);
+
+    // Cleanup the script when the component unmounts
+    return () => {
+      document.getElementById('intentlead-container')?.removeChild(script);
+    };
+  }, []);
 
   return (
     <section className="h-screen -mt-24 flex flex-col md:flex-row justify-center md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
@@ -77,7 +90,10 @@ const Login: React.FC = () => {
             <input className="mr-1" type="checkbox" />
             <span>Remember Me</span>
           </label>
-          <a className="text-deepPlum hover:text-blue-700 hover:underline hover:underline-offset-4" href="#">
+          <a
+            className="text-deepPlum hover:text-blue-700 hover:underline hover:underline-offset-4"
+            href="#"
+          >
             Forgot Password?
           </a>
         </div>
@@ -95,6 +111,8 @@ const Login: React.FC = () => {
             Register
           </a>
         </div>
+        {/* Intentlead container */}
+        <div id="intentlead-container" style={{ width: '100%' }} />
       </div>
     </section>
   );
