@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import logo from '../Assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -46,19 +46,6 @@ const Login: React.FC = () => {
       alert(responseData?.errors || 'An error occurred.');
     }
   };
-
-  useEffect(() => {
-    // Dynamically load the Intentlead script
-    const script = document.createElement('script');
-    script.src = 'https://app.intentlead.com/js/LU27O84PAQ';
-    script.async = true;
-    document.getElementById('intentlead-container')?.appendChild(script);
-
-    // Cleanup the script when the component unmounts
-    return () => {
-      document.getElementById('intentlead-container')?.removeChild(script);
-    };
-  }, []);
 
   return (
     <section className="h-screen -mt-24 flex flex-col md:flex-row justify-center md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
@@ -111,8 +98,15 @@ const Login: React.FC = () => {
             Register
           </a>
         </div>
-        {/* Intentlead container */}
-        <div id="intentlead-container" style={{ width: '100%' }} />
+        {/* Updated: Replaced Script with Iframe */}
+        <div id="intentlead-container" style={{ width: '100%' }}>
+          <iframe
+            src="https://app.intentlead.com/embed/0hGxuIh6Cf"
+            width="100%"
+            height="600px"
+            frameBorder="0"
+          ></iframe>
+        </div>
       </div>
     </section>
   );
