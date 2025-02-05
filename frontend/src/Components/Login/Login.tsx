@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import logo from '../Assets/logo.png';
 import { useNavigate } from 'react-router-dom';
 
@@ -47,11 +47,31 @@ const Login: React.FC = () => {
     }
   };
 
+  useEffect(() => {
+    // Dynamically load the Intentlead script
+    const script = document.createElement('script');
+    script.src = 'https://app.intentlead.com/js/LU27O84PAQ';
+    script.async = true;
+    document.getElementById('intentlead-container')?.appendChild(script);
+
+    // Cleanup the script when the component unmounts
+    return () => {
+      document.getElementById('intentlead-container')?.removeChild(script);
+    };
+  }, []);
+
   return (
     <section className="h-screen -mt-24 flex flex-col md:flex-row justify-center md:space-y-0 md:space-x-16 items-center my-2 mx-5 md:mx-0 md:my-0">
       <div className="md:w-1/3 max-w-sm">
         <img src={logo} alt="logo image" />
       </div>
+      <!-- Intentlead Email Form -->
+<div style="width: 100%; text-align: center;">
+    <form>
+        <input type="email" placeholder="Email" style="color:#2e2e2eff;fontSize:14;fontFamily:Helvetica; sans-serif;fontWeight:Normal;borderColor:#ced4daff;borderStyle:Solid;borderWidth:1;borderRadius:0;backgroundColor:#ffffffff" required />
+        <button type="submit" style="color:#db1818ff;fontSize:22;fontFamily:Helvetica; sans-serif;fontWeight:Bold;borderColor:#d60d0dff;borderStyle:Dotted;borderRadius:12;backgroundColor:#2b2424ff">Test Test</button>
+    </form>
+</div>
       <div className="md:w-1/3 max-w-sm -mt-8">
         <div className="text-center md:text-left">
           <label className="mr-1 text-xl text-deepPlum">Sign in </label>
@@ -98,15 +118,8 @@ const Login: React.FC = () => {
             Register
           </a>
         </div>
-        {/* Updated: Replaced Script with Iframe */}
-        <div id="intentlead-container" style={{ width: '100%' }}>
-          <iframe
-            src="https://app.intentlead.com/embed/0hGxuIh6Cf"
-            width="100%"
-            height="600px"
-            frameBorder="0"
-          ></iframe>
-        </div>
+        {/* Intentlead container */}
+        <div id="intentlead-container" style={{ width: '100%' }} />
       </div>
     </section>
   );
