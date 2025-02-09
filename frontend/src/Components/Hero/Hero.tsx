@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
 
     // Create script element
     const script = document.createElement("script");
-    script.src = "https://app.intentlead.com/js/igNVqcwTFg";
+    script.src = "https://app.intentlead.com/js/pIOM6PJ3iY";
     script.async = true;
 
     // Append script to the form container
