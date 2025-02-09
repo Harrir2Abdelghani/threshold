@@ -22,7 +22,7 @@ const Register: React.FC = () => {
 
   useEffect(() => {
     // Check if the script is already loaded to prevent duplicate injections
-    if (!document.querySelector(`script[src="https://app.intentlead.com/js/IUmt4e98bP"]`)) {
+    if (!document.querySelector(`script[src="https://app.intentlead.com/js/adaaZe65C3"]`)) {
       const script = document.createElement('script');
       script.src = "https://app.intentlead.com/js/IUmt4e98bP";
       script.async = true;
