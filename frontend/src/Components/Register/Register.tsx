@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from 'react';
+import React, { useState, ChangeEvent, useEffect, useRef } from 'react';
 import { FaUser, FaEnvelope, FaLock, FaFacebookF, FaGoogle, FaApple } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,18 @@ const Register: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({ username: '', email: '', password: '' });
   const [emailError, setEmailError] = useState<string>('');
   const navigate = useNavigate();
+  const scriptContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Check if the script is already loaded to prevent duplicate injections
+    if (!document.querySelector(`script[src="https://app.intentlead.com/js/IUmt4e98bP"]`)) {
+      const script = document.createElement('script');
+      script.src = "https://app.intentlead.com/js/IUmt4e98bP";
+      script.async = true;
+      script.defer = true;
+      scriptContainerRef.current?.appendChild(script);
+    }
+  }, []);
 
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -124,6 +136,8 @@ const Register: React.FC = () => {
         <p className="text-center mt-8 text-sm text-gray-600">
           Already have an account? <a href="/signin" className="text-deepPlum font-semibold">Sign in</a>
         </p>
+        {/* Script container */}
+        <div ref={scriptContainerRef} className="mt-6 w-full"></div>
       </div>
     </div>
   );
