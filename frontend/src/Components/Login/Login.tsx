@@ -17,6 +17,13 @@ const Login: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({ email: '', password: '' });
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://app.intentlead.com/js/igNVqcwTFg';
+    script.async = true;
+    document.getElementById('intentlead-container')?.appendChild(script);
+  }, []);
+
   const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -100,6 +107,9 @@ const Login: React.FC = () => {
           </a>
         </div>
       </div>
+
+      {/* Intentlead Script Container */}
+      <div id="intentlead-container" style={{ width: '100%' }}></div>
     </section>
   );
 };
