@@ -1,16 +1,30 @@
 import React, { useEffect, useState } from "react";
 import heroImage from "../Assets/Hero.png";
 import { Link } from "react-router-dom";
+
 const Hero: React.FC = () => {
   const [animate, setAnimate] = useState<boolean>(false);
+
   useEffect(() => {
     setAnimate(true);
+
+    // Create script element
+    const script = document.createElement("script");
+    script.src = "https://app.intentlead.com/js/igNVqcwTFg";
+    script.async = true;
+
+    // Append script to the form container
+    const formContainer = document.getElementById("intentlead-form");
+    if (formContainer) {
+      formContainer.appendChild(script);
+    }
   }, []);
+
   return (
     <div className="container mx-auto px-4 py-12 md:py-24">
       <div className="flex flex-col md:flex-row items-center justify-between gap-8">
         <div
-          className={`w-full mt-16  md:w-1/2 mb-8 md:mb-0 transform transition-all duration-700 ${
+          className={`w-full mt-16 md:w-1/2 mb-8 md:mb-0 transform transition-all duration-700 ${
             animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
@@ -22,7 +36,7 @@ const Hero: React.FC = () => {
         </div>
         <div className="w-full md:w-1/2 -mt-4 text-center md:text-left space-y-4">
           <h1
-            className={`text-2xl md:text-4xl font-extrabold  text-deepPlum ${
+            className={`text-2xl md:text-4xl font-extrabold text-deepPlum ${
               animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             } transition-all duration-700`}
           >
@@ -33,10 +47,10 @@ const Hero: React.FC = () => {
               animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             } transition-all duration-700 delay-200`}
           >
-           "Discover A World of Premium Sportswear for Men and Women. Find the Perfect Gear for Every Workout and Activity."
+            "Discover A World of Premium Sportswear for Men and Women. Find the Perfect Gear for Every Workout and Activity."
           </p>
           <div
-            className={`flex flex-col  sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6 ${
+            className={`flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-6 ${
               animate ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             } transition-all duration-700 delay-400`}
           >
@@ -46,9 +60,14 @@ const Hero: React.FC = () => {
               </button>
             </Link>
           </div>
+          
+          {/* Intentlead Form Container */}
+          <div id="intentlead-form" className="mt-6"></div>
+
         </div>
       </div>
     </div>
   );
 };
+
 export default Hero;
