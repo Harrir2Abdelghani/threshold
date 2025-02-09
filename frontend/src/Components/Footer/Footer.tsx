@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = "https://app.intentlead.com/js/L12uJT8D9Z";
+    script.src = "https://app.intentlead.com/js/pIOM6PJ3iY";
     script.async = true;
     document.getElementById('intentlead-script-container')?.appendChild(script);
   }, []);
